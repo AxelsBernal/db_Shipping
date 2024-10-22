@@ -1,0 +1,151 @@
+@api = http://localhost:3020/api/v1/entregas
+
+//Commerce
+#@api = http://187.229.22.99:8010/api/v1/prod-serv
+### GET
+GET {{api}}
+### GET ITEM
+GET {{api}}/653748d95a3225226c4233c1
+
+GET {{api}}/67174e98c7806ad48c2e3eab
+
+### POST ITEM - Crear un nuevo envío
+POST {{api}}
+Content-Type: application/json
+
+{
+    "IdInstitutoOK": "9001",
+    "IdNegocioOK": "1101",
+    "IdEntregaOK": "9001-1101-111222333444",
+    "IdEntregaBK": "AP-1500",
+    "IdOrdenOK": "9001-653748d95a32",
+    "info_ad": [
+        {
+            "IdEtiquetaOK": "",
+            "IdEtiqueta": "IdFechaPrimerEnvio",
+            "Etiqueta": "Fecha del Primer Envio",
+            "Valor": "2023-12-04T00:00:00.628Z",
+            "IdTipoSeccionOK": "IdSeccionesEntregas-IdFechas",
+            "Secuencia": 10,
+            "detail_row": {
+                "Activo": "S",
+                "Borrado": "N",
+                "detail_row_reg": [
+                    {
+                        "FechaReg": "2022-04-30T00:00:00.628Z",
+                        "UsuarioReg": "FIBARRAC"
+                    }
+                ]
+            }
+        },
+        {
+            "IdEtiquetaOK": "",
+            "IdEtiqueta": "IdFechaUltimoEnvio",
+            "Etiqueta": "Fecha del Ultimo Envio",
+            "Valor": "2023-12-08T00:00:00.628Z",
+            "IdSeccionOK": "IdSeccionesEntregas-IdFechas",
+            "Secuencia": 20,
+            "detail_row": {
+                "Activo": "S",
+                "Borrado": "N",
+                "detail_row_reg": [
+                    {
+                        "FechaReg": "2022-04-30T00:00:00.628Z",
+                        "UsuarioReg": "FIBARRAC"
+                    }
+                ]
+            }
+        }
+    ],
+    "envios": [
+        {
+            "IdDomicilioOK": "9001-706706706706-12345678",
+            "IdPaqueteriaOK": "9001-333444555666",
+            "IdTipoMetodoEnvio": "IdTipoMetodoEnvio-IdEstandar",
+            "CostoEnvio": 0,
+            "info_ad": [
+                {
+                    "IdEtiquetaOK": "",
+                    "IdEtiqueta": "IdCodigoSeguridad",
+                    "Etiqueta": "Codigo de Seguridad",
+                    "Valor": "ABCD1234",
+                    "IdTipoSeccionOK": "IdSeccionesPedidos-IdRecibe",
+                    "Secuencia": 10,
+                    "detail_row": {
+                        "Activo": "S",
+                        "Borrado": "N",
+                        "detail_row_reg": [
+                            {
+                                "FechaReg": "2022-04-30T00:00:00.628Z",
+                                "UsuarioReg": "FIBARRAC"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+### PUT ITEM - Actualizar un envío existente
+PUT {{$api}}/653748d95a3225226c4233c1
+Content-Type: application/json
+
+{
+    "IdInstitutoOK": "9002",
+    "IdNegocioOK": "1102",
+    "IdEntregaOK": "9002-1102-222333444555",
+    "IdEntregaBK": "AP-1600",
+    "IdOrdenOK": "9002-653748d95a33",
+    "info_ad": [
+        {
+            "IdEtiquetaOK": "",
+            "IdEtiqueta": "IdFechaPrimerEnvio",
+            "Etiqueta": "Fecha del Primer Envio Actualizada",
+            "Valor": "2024-01-01T00:00:00.000Z",
+            "IdTipoSeccionOK": "IdSeccionesEntregas-IdFechas",
+            "Secuencia": 10,
+            "detail_row": {
+                "Activo": "S",
+                "Borrado": "N",
+                "detail_row_reg": [
+                    {
+                        "FechaReg": "2023-01-01T00:00:00.000Z",
+                        "UsuarioReg": "FIBARRAC"
+                    }
+                ]
+            }
+        }
+    ],
+    "envios": [
+        {
+            "IdDomicilioOK": "9002-706706706706-12345679",
+            "IdPaqueteriaOK": "9002-333444555667",
+            "IdTipoMetodoEnvio": "IdTipoMetodoEnvio-IdExpress",
+            "CostoEnvio": 50,
+            "info_ad": [
+                {
+                    "IdEtiquetaOK": "",
+                    "IdEtiqueta": "IdQuienRecibe",
+                    "Etiqueta": "Quien Recibe Actualizado",
+                    "Valor": "Juan Perez",
+                    "IdTipoSeccionOK": "IdSeccionesPedidos-IdRecibe",
+                    "Secuencia": 20,
+                    "detail_row": {
+                        "Activo": "S",
+                        "Borrado": "N",
+                        "detail_row_reg": [
+                            {
+                                "FechaReg": "2023-01-01T00:00:00.000Z",
+                                "UsuarioReg": "FIBARRAC"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+### DELETE ITEM - Eliminar un envío
+DELETE {{api}}/67174f0ec7806ad48c2e3f60
