@@ -59,7 +59,6 @@ export const updateEntrega = async (req, res, next) => {
     }
 };
 
-// Eliminar un envío
 export const deleteEntrega = async (req, res, next) => {
     try {
         const { id } = req.params;
@@ -73,3 +72,4 @@ export const deleteEntrega = async (req, res, next) => {
         next(boom.internal(error.message));
     }
 };
+

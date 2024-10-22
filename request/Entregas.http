@@ -5,7 +5,7 @@
 ### GET
 GET {{api}}
 ### GET ITEM
-GET {{api}}/653748d95a3225226c4233c1
+GET {{api}}/67174e98c7806ad48c2e3eab
 
 GET {{api}}/67174e98c7806ad48c2e3eab
 
@@ -14,7 +14,7 @@ POST {{api}}
 Content-Type: application/json
 
 {
-    "IdInstitutoOK": "9001",
+    "IdInstitutoOK": "905",
     "IdNegocioOK": "1101",
     "IdEntregaOK": "9001-1101-111222333444",
     "IdEntregaBK": "AP-1500",
@@ -88,7 +88,7 @@ Content-Type: application/json
 }
 
 ### PUT ITEM - Actualizar un envío existente
-PUT {{$api}}/653748d95a3225226c4233c1
+PUT {{api}}/653748d95a3225226c4233c1
 Content-Type: application/json
 
 {
@@ -148,4 +148,4 @@ Content-Type: application/json
 }
 
 ### DELETE ITEM - Eliminar un envío
-DELETE {{api}}/67174f0ec7806ad48c2e3f60
+DELETE {{api}}/653748d95a3225226c4233c1

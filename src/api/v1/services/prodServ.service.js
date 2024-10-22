@@ -37,11 +37,17 @@ class EntregaService {
 
     async delete(entregaId) {
         try {
-            return await Entrega.findByIdAndRemove(entregaId);
+            const result = await Entrega.findByIdAndDelete(entregaId);
+            if (!result) {
+                throw new Error('Entrega no encontrada');
+            }
+            return result;  // Retorna el documento eliminado o `null` si no se encontró.
         } catch (error) {
             throw error;
         }
     }
+    
+    
 }
 
 export default new EntregaService();
