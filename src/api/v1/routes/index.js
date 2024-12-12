@@ -1,18 +1,17 @@
 import { Router } from 'express';
 import config from '../../../config/config';
-// Importar rutas
-import entregaRoutes from './prodServ.routes'; // Asegúrate de que el nombre del archivo importado sea correcto
+import movieRoutes from './prodServ.routes'; // Rutas específicas para películas
 
 const routerAPI = (app) => {
-  const router = Router();
-  const api = config.API_URL; // Asegúrate de que config tenga una propiedad API_URL
+    const router = Router();
+    const api = config.API_URL; // '/api/v1'
 
-  app.use(api, router);
-  // Rutas
-  router.use('/entregas', entregaRoutes); // Cambiado de '/prod-serv' a '/entregas' para reflejar el enfoque en envíos
+    app.use(api, router);
 
-  // Retorna el router
-  return router;
+    // Rutas
+    router.use('/peliculas', movieRoutes); // Se asocia directamente al prefijo '/api/v1/peliculas'
+
+    return router;
 };
 
 module.exports = routerAPI;
